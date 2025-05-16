@@ -1,0 +1,41 @@
+before_script:
+  - export PATH=$PATH:/usr/local/go/bin
+
+build-job:
+  stage: build
+  script:
+    - go build
+  tags:
+    - pacerunner
+
+test:
+  stage: test
+  script:
+    - echo running tests
+  tags:
+    - pacerunner
+
+# deploy:
+#   stage: deploy
+#   before_script:
+#   - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )' 
+#   - eval $(ssh-agent -s)
+#   - echo "$SSH_DEPLOY_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+#   - mkdir -p ~/.ssh
+#   - chmod 700 ~/.ssh
+#   - ssh-keyscan 65.1.148.131 >> ~/.ssh/known_hosts
+#   - chmod 644 ~/.ssh/known_hosts
+#   script:
+#   - ssh ubuntu@65.1.148.131 "hostname && echo 'Welcome!!!' > welcome.txt"
+#   - sudo systemctl stop space.service
+#   - exit
+#   - scp space ubuntu@65.1.148.131:/home/ubuntu/space
+#   - ssh ubuntu@65.1.148.131
+#   - sudo systemctl start space.service
+#   - sudo systemctl status space.service
+
+    # - ssh ubuntu@65.1.148.131
+    # - sudo systemctl start space.service
+    # - sudo systemctl status space.service
+
+

@@ -1,0 +1,12 @@
+version: "3.6"
+
+services:
+  space:
+    image: 65.1.130.253:5000/space-{version}:test
+    build: .
+    volumes:
+      - ./Logs:/app/Logs
+      - ./resources/:/app/resources
+    environment:
+      - TZ=Asia/Kolkata
+

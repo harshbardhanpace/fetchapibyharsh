@@ -1,0 +1,10 @@
+package dbops
+
+var RedisRepo RedisRepository
+var OrderRedisRepo RedisRepository
+var SmartCacheRepo RedisRepository
+var ContractCacheRepo RedisRepository
+var MongoRepo MongoRepository
+var MongoDaoRepo MongoRepository
+var MongoContractSearchRepo MongoRepository
+var PostgresRepo PostgresRepository
